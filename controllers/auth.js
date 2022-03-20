@@ -47,7 +47,7 @@ export const login = async (req, res) => {
     user.password = undefined;
     res.cookie('token', token, { httpOnly: true });
 
-    res.json(user);
+    res.json({data:user});
   } catch (err) {
     console.log(err)
     return res.json({ error: err }).status(400)
